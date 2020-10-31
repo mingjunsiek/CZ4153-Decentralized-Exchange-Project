@@ -64,7 +64,7 @@ The **Owner** will sell these tokens on the exchange at an affordable price.
 
 In our **Exchange**, we have a structure holding onto these coins, **SCSE**, **EEE** and **MAE**. In each of these coins, it holds a **Buy** and **Sell** book.
 
-## 2.1 Token's Order Book (Buy / Sell)
+## 3.1 Token's Order Book (Buy / Sell)
 
 In the Token's Order Book, it is used to store the **Limit Orders** that users had made in the exchange. A limit order has a price and amount. In order to easily insert new **Limit Orders**, we shall do the following:
 
@@ -74,35 +74,35 @@ In the Token's Order Book, it is used to store the **Limit Orders** that users h
 4. We also used a linked list to connect these **Amount** but it is not used to insert the **Amount** in an order. The linked list is to allow for easier deletion of **Amount** when an order has been fully filled or when an order is deleted by the user.
 5. The nodes in **Amount** are inserted based on a Queue system. The oldest orders have a higher priority than the newer orders. New orders are place behind older orders.
 
-## 2.2 Buy Limit Order
+## 3.2 Buy Limit Order
 
 ![Buy exe](./assets/buy_exe.png)
 
-## 2.3 Sell Limit Order
+## 3.3 Sell Limit Order
 
 ![Orders Architecture](./assets/sell_exe.png)
 
-## 2.4 Buy Market Order
+## 3.4 Buy Market Order
 
 For a **Buy Market Order**, it is similar to the **Buy Limit Order**, with the only difference being there is no price indication. The order will take whatever is inside the **Sell Order Book** and trade the amount that the user wants _from the cheapest price order to the most expensive price order_. This continues until the amount is fully filled, the user ran out of WETH to trade or there is no more orders in the **Sell Order Book**.
 
-## 2.4 Sell Market Order
+## 3.4 Sell Market Order
 
 For a **Sell Market Order**, it is the opposite of a **Buy Market Order**. It searches the **Buy Order Book** _from the most expensive orders to the least expensive orders_.
 
 # 4. Features
 
-## 3.1 Metamask Integration
+## 4.1 Metamask Integration
 
 ![3.1](./assets/f1.png)
 In order to use the functionality of the website, users **MUST** install Metamask.
 
-## 3.2 ETH/WETH Token Swap
+## 4.2 ETH/WETH Token Swap
 
 ![3.2](./assets/f2.png)
 In order to facilitate a smooth trading experience, we will use Wrapped Ethereum as our base token to trade. Users are able to swap their ETH to WETH in our exchange and vice versa.
 
-## 3.3 Trading Pairs
+## 4.3 Trading Pairs
 
 ![3.3](./assets/f3.png)
 Funky Crypto Exchange supports the following trading pair:
@@ -111,29 +111,29 @@ Funky Crypto Exchange supports the following trading pair:
 2. WETH/MAE
 3. WETH/EEE
 
-## 3.4 View Balance
+## 4.4 View Balance
 
 ![3.4](./assets/f4.png)
 Users are able to view their balances that they currently have in their Metamask account on our exchange.
 
-## 3.5 Transaction Types
+## 4.5 Transaction Types
 
 Funky Crypto Exchange supports the following transactions:
 
 1. Limit Order (Buy/Sell)![3.5](./assets/f5.1.png)
 2. Market Order (Buy/Sell)![3.5](./assets/f5.2.png)
 
-## 3.6 View Global Order Book
+## 4.6 View Global Order Book
 
 ![3.6](./assets/f6.png)
 Users are able to view both Buy and Sell order books for each trading pair.
 
-## 3.7 View Users Order Book
+## 4.7 View Users Order Book
 
 ![3.7](./assets/f7.png)
 Users are able to view their own orders that they have made on each trading pair.
 
-## 3.8 Cancellation of Orders
+## 4.8 Cancellation of Orders
 
 ![3.8](./assets/f8.png)
 Users are able to cancel the orders they have previously made.
