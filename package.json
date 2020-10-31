@@ -1,0 +1,42 @@
+{
+  "name": "dex-ethereum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yong-an/DEX-Ethereum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yong-an/DEX-Ethereum/issues"
+  },
+  "homepage": "https://github.com/yong-an/DEX-Ethereum#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.1.1",
+    "all": "0.0.0",
+    "babel-preset-env": "^1.7.0",
+    "docker": "^1.0.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "web3": "^1.3.0",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "chai-bignumber": "3.0.0",
+    "bootstrap": "4.3.1",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-bootstrap-validation": "^0.1.11",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "mocha": "^8.2.0",
+    "prettier": "^2.1.2",
+    "prettier-plugin-solidity": "^1.0.0-alpha.59"
+  }
+}
