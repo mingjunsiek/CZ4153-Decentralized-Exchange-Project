@@ -8,6 +8,7 @@
 - Solidity v0.5.16 (solc-js)
 - Node v12.16.3
 - Web3.js v1.2.1
+- Ganache v2.5.4
 - npm
 
 ### Initial Setup
@@ -20,9 +21,10 @@
 
 1. Create a new project on Ganache
 2. Add **truffle-config.js** from project folder
-3. Start Ganache Server
-4. cd into project directory
-5. Run `truffle migrate --reset --network development` in console
+3. In the **Chain** section, ensure Gas Limit is **6721975**
+4. Start Ganache Server
+5. cd into project directory
+6. Run `truffle migrate --reset --network development` in console
 
 ### Set Up Accounts
 
@@ -48,7 +50,7 @@
 1. cd into '**.Something Funky Is Nice/dex-exchange**'
 2. Run `npm install`
 3. Run `npm run start` in console
-4. If all token balances are 0 in the website, make sure to ensure your Metamask account is connected to the website
+4. If all token balances are 0 in the website, make sure your Metamask account is connected to the website
 
 # 2. Plan
 
@@ -56,7 +58,7 @@ For this assignment, we will have an **Owner** who will be deploying all of our 
 
 The **Owner** will sell these tokens on the exchange at an affordable price.
 
-**Users** who wish to obtain these tokens will have to trade their ETH for these tokens. Before doing so, they have to first convert their ETH to the base token, WETH. Only by doing so, can they trade on the exchange using the trading pairs available.
+**Users** who wish to obtain these tokens will have to trade their ETH for these tokens. Before doing so, they have to first swap their ETH to the base token, WETH. Only by doing so, can they trade on the exchange using the trading pairs available.
 
 # 3. Funky Crypto Exchange Architecture
 
@@ -69,10 +71,12 @@ In our **Exchange**, we have a structure holding onto these coins, **SCSE**, **E
 In the Token's Order Book, it is used to store the **Limit Orders** that users had made in the exchange. A limit order has a price and amount. In order to easily insert new **Limit Orders**, we shall do the following:
 
 1. In each Order Book, it stores multiple **Price** which are linked together using a linked list. This **Price** are inserted in ascending order.
-2. We used a linked list as this allows for easier insertion of new prices as well as to remove the **Price** when it's orders has been fully filled.
-3. In each **Price**, there may be one or more **Amount**.
-4. We also used a linked list to connect these **Amount** but it is not used to insert the **Amount** in an order. The linked list is to allow for easier deletion of **Amount** when an order has been fully filled or when an order is deleted by the user.
-5. The nodes in **Amount** are inserted based on a Queue system. The oldest orders have a higher priority than the newer orders. New orders are place behind older orders.
+2. We used a linked list as this allows for easier insertion of new prices.
+3. Deletion of **Price** when there are no more **Amount** nodes in it is achieved by connecting it's sibling nodes to each other instead of that **Price** node.
+4. In each **Price**, there may be one or more **Amount**.
+5. We also used a linked list to connect these **Amount** but it is not used to insert the **Amount** in an order. The linked list is to allow for easier deletion of **Amount** when an order has been fully filled or when an order is deleted by the user.
+6. Deletion of **Amount** node is the same as **Price**.
+7. The nodes in **Amount** are inserted based on a Queue system. The oldest orders have a higher priority than the newer orders. New orders are place behind older orders.
 
 ## 3.2 Buy Limit Order
 
