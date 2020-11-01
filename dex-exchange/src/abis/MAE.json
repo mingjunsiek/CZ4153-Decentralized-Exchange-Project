@@ -8520,12 +8520,12 @@
         }
       },
       "links": {},
-      "address": "0x83a0a3b394739e6dcABB90746eb47FB43b0bA8c2",
-      "transactionHash": "0x5c9a8953bd7c51bc0f59f548ce08c78ee1f4ea8919c0d2acc580498b8771c69f"
+      "address": "0xd8F73Fa1F0B666450bA7baDd3948196406D34270",
+      "transactionHash": "0xac4619c65491f957429ac1c62bad0de4cf914d8cbb2fa9a209e9d7be78094b99"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-31T15:16:15.240Z",
+  "updatedAt": "2020-11-01T12:45:46.854Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

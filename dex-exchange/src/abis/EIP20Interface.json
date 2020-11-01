@@ -1945,7 +1945,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-31T15:16:08.667Z",
+  "updatedAt": "2020-11-01T12:45:41.562Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {

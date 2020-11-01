@@ -8906,12 +8906,12 @@
         }
       },
       "links": {},
-      "address": "0x4aca6a8716e7eb8708dE49886Db93DE982344096",
-      "transactionHash": "0x84d74214ad9deb6147447b93456d238648e6717dc25d6e7f962b7b7536c80834"
+      "address": "0x20fB120084C101163B7A066439926DB5da731e43",
+      "transactionHash": "0xb8ad7698db63fd56a640d71bf760a04a133d7fb9c2f18c5d10a907774b4f4910"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-31T15:16:15.252Z",
+  "updatedAt": "2020-11-01T12:45:46.866Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

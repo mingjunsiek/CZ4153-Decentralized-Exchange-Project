@@ -97,7 +97,8 @@ contract exchangev2 {
             while (
                 offerPointer <= loadedToken.sellBook[buyPrice].lowestPriority &&
                 remainingAmount > 0 &&
-                !feedback[1]
+                !feedback[1] &&
+                !feedback[2]
             ) {
                 uint256 volumeAtPointer = loadedToken.sellBook[buyPrice]
                     .offers[offerPointer]
@@ -398,17 +399,12 @@ contract exchangev2 {
             uint256 remainingAmount = _amount;
             uint256 buyPrice = loadedToken.minSellPrice;
             uint256 offerPointer;
-            while (buyPrice <= _price && remainingAmount > 0) {
+            while (buyPrice != 0 && buyPrice <= _price && remainingAmount > 0) {
                 offerPointer = loadedToken.sellBook[buyPrice].highestPriority;
                 while (
                     offerPointer <=
                     loadedToken.sellBook[buyPrice].lowestPriority &&
-                    remainingAmount > 0 &&
-                    token.balanceOf(
-                        loadedToken.sellBook[buyPrice].offers[offerPointer]
-                            .maker
-                    ) >=
-                    loadedToken.sellBook[buyPrice].offers[offerPointer].amount
+                    remainingAmount > 0
                 ) {
                     uint256 volumeAtPointer = loadedToken.sellBook[buyPrice]
                         .offers[offerPointer]
@@ -545,17 +541,14 @@ contract exchangev2 {
             uint256 sellPrice = loadedToken.maxBuyPrice;
             uint256 remainingAmount = _amount;
             uint256 offerPointer;
-            while (sellPrice >= _price && remainingAmount > 0) {
+            while (
+                sellPrice != 0 && sellPrice >= _price && remainingAmount > 0
+            ) {
                 offerPointer = loadedToken.buyBook[sellPrice].highestPriority;
                 while (
                     offerPointer <=
                     loadedToken.buyBook[sellPrice].lowestPriority &&
-                    remainingAmount > 0 &&
-                    baseToken.balanceOf(
-                        loadedToken.buyBook[sellPrice].offers[offerPointer]
-                            .maker
-                    ) >=
-                    loadedToken.buyBook[sellPrice].offers[offerPointer].amount
+                    remainingAmount > 0
                 ) {
                     uint256 volumeAtPointer = loadedToken.buyBook[sellPrice]
                         .offers[offerPointer]
@@ -579,9 +572,6 @@ contract exchangev2 {
                             volumeAtPointer
                         );
 
-                        loadedToken.buyBook[sellPrice].offers[offerPointer]
-                            .amount = 0;
-
                         // Send weth to taker
                         baseToken.transferFrom(
                             loadedToken.buyBook[sellPrice].offers[offerPointer]
@@ -589,6 +579,9 @@ contract exchangev2 {
                             msg.sender,
                             ethRequiredNow
                         );
+
+                        loadedToken.buyBook[sellPrice].offers[offerPointer]
+                            .amount = 0;
 
                         loadedToken.buyBook[sellPrice]
                             .highestPriority = loadedToken.buyBook[sellPrice]
