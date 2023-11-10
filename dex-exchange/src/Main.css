@@ -1,0 +1,98 @@
+
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0
+     rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);}
+.eth{
+    content: url(resources/ethereum3.svg);
+    width: 25px;
+}
+.scse {
+    content: url(resources/s.svg);
+    width: 25px;
+}
+.mae {
+    content: url(resources/m.svg);
+    width: 25px;
+}
+.eee{
+    content: url(resources/e.svg);
+    width: 25px;
+}
+.button2::before{
+    content: url(resources/s.svg);
+    width: 10px;
+}
+.star{
+    content: url(resources/star-svgrepo-com.svg);
+    width: 25px;
+}
+
+.fa-star:hover{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f005";
+    color: #fabe3c;
+}
+
+.currency{
+    color: rgb(160, 160, 160);
+    font-size: 10px;
+}
+
+.chart1{
+    content: url(resources/Candlestick-5.png);
+    width: 90%;
+}
+.info_header{
+    font-weight: bold;
+}
+.info_name{
+    color: grey;
+}
+.info_text{
+    color: black;
+    text-align: right;
+    float: right;
+}
+
+.pancake{
+    content: url(resources/pancake.png);
+    width: 25px;
+}
+
+.cookie{
+    content: url(resources/cookies.png);
+    width: 25px;
+}
+
+.donut{
+    content: url(resources/donut.png);
+    width: 25px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

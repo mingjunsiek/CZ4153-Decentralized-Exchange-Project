@@ -94,7 +94,7 @@ class TransactionOrders extends Component {
       title = "Sell " + this.state.transactionType + " Order";
       balance = window.web3.utils.fromWei(this.state.tokenBalance, "Ether");
       limitButton = (
-        <button type="submit" className="btn btn-danger btn-block btn-lg">
+        <button type="submit" className="btn btn-dark btn-block btn-lg">
           Sell
         </button>
       );
@@ -102,7 +102,7 @@ class TransactionOrders extends Component {
       title = "Buy " + this.state.transactionType + " Order";
       balance = window.web3.utils.fromWei(this.state.baseTokenBalance, "Ether");
       limitButton = (
-        <button type="submit" className="btn btn-success btn-block btn-lg">
+        <button type="submit" className="btn btn-outline-secondary btn-block btn-lg">
           Buy
         </button>
       );

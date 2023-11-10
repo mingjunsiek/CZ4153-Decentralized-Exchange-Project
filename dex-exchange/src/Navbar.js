@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import exchange_logo from "./resources/exchange.png";
+import exchange_logo from "./resources/exchange1.png";
 
 class Navbar extends Component {
   render() {
@@ -18,7 +18,7 @@ class Navbar extends Component {
             className="d-inline-block align-top"
             alt=""
           />
-          &nbsp; Funky Crypto Exchange
+          &nbsp; hashXswap
         </a>
         <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
